@@ -271,6 +271,15 @@ export class NewsArea extends Component {
            articles: this.articles,
            loading:false 
         }
+
+    }
+   async componentDidMount()
+    {
+        let url="https://newsapi.org/v2/top-headlines?country=us&apiKey=a07b6096c54c41fe897870ee1d69e63e";
+        let data= await fetch(url);
+        let parsedData=await data.json();
+        console.log(parsedData);
+        this.setState({articles: parsedData.articles})
     }
    
     render() {
