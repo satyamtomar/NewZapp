@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Newscard from './Newscard'
 
+
 export class NewsArea extends Component {
 
     constructor(){
@@ -35,8 +36,8 @@ export class NewsArea extends Component {
                 })}
                            </div>
                            <div className="container d-flex justify-content-between">
-                           <button type="button" class="btn btn-dark">Previous</button>
-                           <button type="button" class="btn btn-dark">Next</button>
+                           <button type="button" class="btn btn-dark"> Previous </button>
+                           <button type="button" class="btn btn-dark"> Next </button>
                            </div>
             </div>
         )
@@ -44,3 +45,4 @@ export class NewsArea extends Component {
 }
 
 export default NewsArea
+
