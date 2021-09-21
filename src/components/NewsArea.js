@@ -16,13 +16,36 @@ export class NewsArea extends Component {
     }
    async componentDidMount()
     {
-        let url="https://newsapi.org/v2/top-headlines?country=US&apiKey=a07b6096c54c41fe897870ee1d69e63e";
+        let url="https://newsapi.org/v2/top-headlines?country=US&apiKey=a07b6096c54c41fe897870ee1d69e63e&page=1";
         let data= await fetch(url);
         let parsedData=await data.json();
-        console.log(parsedData);
+       // console.log(parsedData);
         this.setState({articles: parsedData.articles})
     }
-   
+
+    handleprevclick =async ()=>{
+        let url=`https://newsapi.org/v2/top-headlines?country=US&apiKey=a07b6096c54c41fe897870ee1d69e63e&page=${this.state.page -1}`;
+    let data= await fetch(url);
+    let parsedData=await data.json();
+    // console.log(parsedData);
+       
+    this.setState({
+        page:this.state.page-1,
+        articles: parsedData.articles
+    })
+    }
+    handlenextclick = async ()=>
+   {
+    let url=`https://newsapi.org/v2/top-headlines?country=US&apiKey=a07b6096c54c41fe897870ee1d69e63e&page=${this.state.page+1}`;
+    let data= await fetch(url);
+    let parsedData=await data.json();
+    console.log("nextttttt")
+             
+    this.setState({
+        page:this.state.page+1
+        ,articles: parsedData.articles
+    })
+   }
     render() {
         return (
             <div className="container my-3">
@@ -36,8 +59,8 @@ export class NewsArea extends Component {
                 })}
                            </div>
                            <div className="container d-flex justify-content-between">
-                           <button type="button" class="btn btn-dark"> Previous </button>
-                           <button type="button" class="btn btn-dark"> Next </button>
+                           <button  disabled={this.state.page <=1} type="button" className="btn btn-dark" onClick={this.handleprevclick}> Previous </button>
+                           <button type="button" className="btn btn-dark" onClick={this.handlenextclick}> Next </button>
                            </div>
             </div>
         )
