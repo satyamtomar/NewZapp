@@ -9,12 +9,13 @@ export class NewsArea extends Component {
         this.state ={
            articles: [],
            loading:false ,
+           page:1
         }
 
     }
    async componentDidMount()
     {
-        let url="https://newsapi.org/v2/top-headlines?country=us&apiKey=a07b6096c54c41fe897870ee1d69e63e";
+        let url="https://newsapi.org/v2/top-headlines?country=US&apiKey=a07b6096c54c41fe897870ee1d69e63e";
         let data= await fetch(url);
         let parsedData=await data.json();
         console.log(parsedData);
@@ -32,9 +33,11 @@ export class NewsArea extends Component {
                 </div>
               
                 })}
-               
-                
-                </div>
+                           </div>
+                           <div className="container d-flex justify-content-between">
+                           <button type="button" class="btn btn-dark">Previous</button>
+                           <button type="button" class="btn btn-dark">Next</button>
+                           </div>
             </div>
         )
     }
