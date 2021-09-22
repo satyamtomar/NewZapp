@@ -10,7 +10,7 @@ export class NewsArea extends Component {
         this.state ={
            articles: [],
            loading:false ,
-           page:1
+           page:1,
         }
 
     }
@@ -65,7 +65,7 @@ export class NewsArea extends Component {
                            </div>
                            <div className="container d-flex justify-content-between">
                            <button  disabled={this.state.page <=1} type="button" className="btn btn-dark" onClick={this.handleprevclick}> Previous </button>
-                           <button type="button" className="btn btn-dark" onClick={this.handlenextclick}> Next </button>
+                           <button disabled={this.state.page+1>Math.ceil(this.state.totalResults/18)} type="button" className="btn btn-dark" onClick={this.handlenextclick}> Next </button>
                            </div>
             </div>
         )
