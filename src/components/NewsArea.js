@@ -62,7 +62,8 @@ export class NewsArea extends Component {
                 <h1 className="text-center">NewZapp- Top Headlines of the day</h1>
                 {this.state.loading&&<Spin/>}
                 <div className="row">
-                {!this.state.loading&&this.state.articles.map((ele)=>{
+                {!this.state.loading&&this.state.articles.map((ele)=>
+                {
                    return <div className="col-md-4" key={ele.url}>
                 <Newscard  title={ele.title} description={ele.description} imgurl={ele.urlToImage} newsurl={ele.url}   />
                 </div>
