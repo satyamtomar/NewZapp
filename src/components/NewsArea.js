@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Newscard from './Newscard'
-
+import Spin from './Spin'
 
 export class NewsArea extends Component {
 
@@ -17,21 +17,24 @@ export class NewsArea extends Component {
    async componentDidMount()
     {
         let url=`https://newsapi.org/v2/top-headlines?country=US&apiKey=a07b6096c54c41fe897870ee1d69e63e&page=1&pagesize=${this.props.pagesize}`;
+        this.setState({loading:true})
         let data= await fetch(url);
         let parsedData=await data.json();
        // console.log(parsedData);
-        this.setState({articles: parsedData.articles,totalResults:parsedData.totalResults})
+        this.setState({articles: parsedData.articles,totalResults:parsedData.totalResults,loading:false})
     }
 
     handleprevclick =async ()=>{
         let url=`https://newsapi.org/v2/top-headlines?country=US&apiKey=a07b6096c54c41fe897870ee1d69e63e&page=${this.state.page -1}&pagesize=${this.props.pagesize}`;
-    let data= await fetch(url);
+        this.setState({loading:true});
+        let data= await fetch(url);
     let parsedData=await data.json();
     // console.log(parsedData);
        
     this.setState({
         page:this.state.page-1,
-        articles: parsedData.articles
+        articles: parsedData.articles,
+        loading:false
     })
     }
     handlenextclick = async ()=>
@@ -41,22 +44,25 @@ export class NewsArea extends Component {
        else{
 
     let url=`https://newsapi.org/v2/top-headlines?country=US&apiKey=a07b6096c54c41fe897870ee1d69e63e&page=${this.state.page+1}&pagesize=${this.props.pagesize}`;
+    this.setState({loading:true})
     let data= await fetch(url);
     let parsedData=await data.json();
     console.log("nextttttt")
              
     this.setState({
         page:this.state.page+1
-        ,articles: parsedData.articles
+        ,articles: parsedData.articles,
+        loading:false
     })
 }
    }
     render() {
         return (
             <div className="container my-3">
-                <h1>NewZapp- Top Headlines of the day</h1>
+                <h1 className="text-center">NewZapp- Top Headlines of the day</h1>
+                {this.state.loading&&<Spin/>}
                 <div className="row">
-                {this.state.articles.map((ele)=>{
+                {!this.state.loading&&this.state.articles.map((ele)=>{
                    return <div className="col-md-4" key={ele.url}>
                 <Newscard  title={ele.title} description={ele.description} imgurl={ele.urlToImage} newsurl={ele.url}   />
                 </div>
