@@ -16,7 +16,8 @@ export class NewsArea extends Component {
     }
    async componentDidMount()
     {
-        let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category} &apiKey=a07b6096c54c41fe897870ee1d69e63e&page=1&pagesize=${this.props.pagesize}`;
+        let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=a07b6096c54c41fe897870ee1d69e63e&page=1&pagesize=${this.props.pagesize}`;
+     //   let url =`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=3763c7b0d1eb4337af63b64c2782d64a`;
         this.setState({loading:true})
         console.log(url)
         let data= await fetch(url);
