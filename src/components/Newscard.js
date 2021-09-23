@@ -19,18 +19,13 @@ export class Newscard extends Component {
             </span>
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{description}</p>
+
             <p class="card-text">
-              <small class="text-muted">
-                {" "}
-                Author: {author ? author : "unknown"}{" "}
+              <small class="text-muted">                
+                <strong>By:</strong> {author ? author : "unknown"}  <strong>At:</strong> {new Date(date).toGMTString()}  
               </small>
             </p>
-            <p class="card-text">
-              <small class="text-muted">
-                {" "}
-                PublishedAt: {new Date(date).toGMTString()}
-              </small>
-            </p>
+            
             <a rel="noreferrer" href={newsurl} className="btn btn-sm btn-dark">
               Read More
             </a>
