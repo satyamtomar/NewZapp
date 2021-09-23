@@ -69,7 +69,7 @@ export class NewsArea extends Component {
                 {!this.state.loading&&this.state.articles.map((ele)=>
                 {
                    return <div className="col-md-4" key={ele.url}>
-                <Newscard  title={ele.title} description={ele.description} imgurl={ele.urlToImage} newsurl={ele.url}   />
+                <Newscard  title={ele.title} description={ele.description} sources={ele.source.name} imgurl={ele.urlToImage} newsurl={ele.url} author={ele.author} date={ele.publishedAt} />
                 </div>
               
                 })}
