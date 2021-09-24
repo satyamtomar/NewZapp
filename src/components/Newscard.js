@@ -14,14 +14,14 @@ export class Newscard extends Component {
             alt="..."
           />
           <div className="card-body">
-            <span className="position-absolute top-0   translate-middle badge rounded-pill bg-dark" style={{left:"92%", zIndex:'1'}}>
+            <span className="position-absolute top-0   translate-middle badge rounded-pill bg-dark" style={{left:"90%", zIndex:'1'}}>
               {sources}
             </span>
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{description}</p>
 
-            <p class="card-text">
-              <small class="text-muted">                
+            <p className="card-text">
+              <small className="text-muted">                
                 <strong>By:</strong> {author ? author : "unknown"}  <strong>At:</strong> {new Date(date).toGMTString()}  
               </small>
             </p>
