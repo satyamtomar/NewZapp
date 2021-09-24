@@ -7,13 +7,14 @@ export class Newscard extends Component {
 
     return (
       <div className="my-3">
-        <div className="card" style={{ width: "18rem" }}>
+        <div className="card" >
           <img
             src={!imgurl ? "imgg.jpg" : imgurl}
             className="card-img-top"
             alt="..."
           />
           <div className="card-body">
+          
             <span className="position-absolute top-0   translate-middle badge rounded-pill bg-dark" style={{left:"90%", zIndex:'1'}}>
               {sources}
             </span>
