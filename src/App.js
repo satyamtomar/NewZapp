@@ -29,10 +29,8 @@ export default class App extends Component
         <Navbar/>
         <LoadingBar
         height={3}
-       // color='#f11946'
        color='#ffffff'
         progress={this.state.progress}
-        // onLoaderFinished={() => setProgress(0)}
       />
         <Switch>
           <Route exact path="/"><NewsArea setProgress={this.SetProgress} apikey={this.apikey} key="general" pagesize={this.pagesize} country="us" category="general"/></Route>
