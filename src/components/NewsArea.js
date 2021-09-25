@@ -1,81 +1,101 @@
-import React, { Component } from 'react'
+import React, { useEffect,useState } from 'react'
 import Newscard from './Newscard'
 import Spin from './Spin'
 import InfiniteScroll from "react-infinite-scroll-component";
 
-export class NewsArea extends Component {
-  
-    capitalizeFirstletter  =(string)=>{
+const NewsArea =(props)=> {
+     const [articles,setArticles]=useState([]);
+     const [loading,setLoading]=useState(true);
+     const [page,setPage]=useState(0);
+     const [totalResults,setTotalResults]=useState(0);
+     
+
+const capitalizeFirstletter  =(string)=>{
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
-    constructor(props){
-        super(props);
-        console.log('Newscard');
-        this.state ={
-           articles: [],
-           loading:false ,
-           page:1,
-           totalResults:0
-        }
-    document.title=`NewZapp-${this.capitalizeFirstletter(this.props.category)}`;
-    }
-    async updatednews(){
-        this.props.setProgress(10);
-        let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page}&pagesize=${this.props.pagesize}`;
-        this.setState({loading:true})
-        console.log(url)
+    // constructor(props){
+    //     super(props);
+    //     console.log('Newscard');
+    //     state ={
+    //        articles: [],
+    //        loading:false ,
+    //        page:1,
+    //        totalResults:0
+    //     }
+    // }
+
+    document.title=`NewZapp-${capitalizeFirstletter(props.category)}`;
+    
+    const  updatednews = async () => {
+        props.setProgress(10);
+        let url=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page}&pagesize=${props.pagesize}`;
+        setLoading(true);
+    //    setState({loading:true})
+        // console.log(url)
         let data= await fetch(url);
-        this.props.setProgress(40);
+        props.setProgress(40);
         let parsedData=await data.json();
-        this.props.setProgress(70);
-       console.log(parsedData);
-        this.setState({articles: parsedData.articles,totalResults:parsedData.totalResults,loading:false})
-       this.props.setProgress(100);
-    }
-   async componentDidMount()
-    {
-    this.updatednews();  
-    }
+        props.setProgress(70);
+    //    console.log(parsedData);
+        setArticles(parsedData.articles);
+       setTotalResults(parsedData.totalResults);
+       setLoading(false);
 
-    handleprevclick =async ()=>{
-    this.setState({
-        page:this.state.page-1,      
-    })
-    this.updatednews();
+        //setState({articles: parsedData.articles,totalResults:parsedData.totalResults,loading:false})
+       props.setProgress(100);
     }
-    handlenextclick = async ()=>
-   {
-    this.setState({
-        page:this.state.page+1,      
-    })
-    this.updatednews();
-   }
+   useEffect(() => {
+       updatednews();
+       // eslint-disable-next-line
+   }, [])
+//    async componentDidMount()
+//     {
+//     updatednews();  
+//     }
 
-    fetchMoreData = async() => {
-    this.setState({page:this.state.page +1})
-    let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page}&pagesize=${this.props.pagesize}`;
-       console.log(url)
+//  const   handleprevclick =async ()=>{
+//     setState({
+//         page:page-1,      
+//     })
+//     updatednews();
+//     }
+//   const  handlenextclick = async ()=>
+//    {
+//     // setState({
+//     //     page:page+1,      
+//     // })
+//     updatednews();
+//    }
+
+   const fetchMoreData = async () => {
+    //setState({page:page +1})
+   
+    let url=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page+1}&pagesize=${props.pagesize}`;
+    //    console.log(url)
+    setPage(page+1);
        let data= await fetch(url);
        let parsedData=await data.json();
-      console.log(parsedData);
-       this.setState({articles: this.state.articles.concat(parsedData.articles),totalResults:parsedData.totalResults,loading:false})
+      //console.log(parsedData);
+      setArticles(articles.concat(parsedData.articles));
+      setTotalResults(parsedData.totalResults);
+      setLoading(false);
+       //setState({articles: articles.concat(parsedData.articles),totalResults:parsedData.totalResults,loading:false})
    
   };
 
-    render() {
-        return (
+           return (
             <>
-                <h1 className="text-center">NewZapp- Top  {this.capitalizeFirstletter(this.props.category)} Headlines</h1>
-                {this.state.loading&&<Spin/>}
+                <h1 className="text-center">NewZapp- Top  {capitalizeFirstletter(props.category)} Headlines</h1>
+                {loading&&<Spin/>}
                 <InfiniteScroll
-          dataLength={this.state.articles.length}
-          next={this.fetchMoreData}
-          hasMore={this.state.articles.length!==this.state.totalResults}
+          dataLength={articles.length}
+          next={fetchMoreData}
+          hasMore={articles.length!==totalResults}
           loader={<Spin/>}
         >
         <div className="container my-3">
                 <div className="row">
-                {this.state.articles.map((ele)=>
+                {articles.map((ele)=>
                 {
                    return <div className="col-md-4" key={ele.url}>
                 <Newscard  title={ele.title} description={ele.description} sources={ele.source.name} imgurl={ele.urlToImage} newsurl={ele.url} author={ele.author} date={ele.publishedAt} />
@@ -86,13 +106,13 @@ export class NewsArea extends Component {
                  </div>
                  </InfiniteScroll>
                            {/* <div className="container d-flex justify-content-between">
-                           <button  disabled={this.state.page <=1} type="button" className="btn btn-dark" onClick={this.handleprevclick}> Previous </button>
-                           <button disabled={this.state.page+1>Math.ceil(this.state.totalResults/this.props.pagesize)} type="button" className="btn btn-dark" onClick={this.handlenextclick}> Next </button>
+                           <button  disabled={page <=1} type="button" className="btn btn-dark" onClick={handleprevclick}> Previous </button>
+                           <button disabled={page+1>Math.ceil(totalResults/props.pagesize)} type="button" className="btn btn-dark" onClick={handlenextclick}> Next </button>
                            </div> */}
             </>
         )
     }
-}
+
 
 export default NewsArea
 
