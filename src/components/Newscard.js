@@ -8,16 +8,18 @@ export class Newscard extends Component {
     return (
       <div className="my-3">
         <div className="card" >
+        
+          <div style={{display:'flex',justifyContent:'flex-end',position:'absolute',right:'0'}}>
+            <span className="badge rounded-pill bg-dark" >
+              {sources}
+            </span>
+            </div>
           <img
             src={!imgurl ? "imgg.jpg" : imgurl}
             className="card-img-top"
             alt="..."
           />
           <div className="card-body">
-          
-            <span className="position-absolute top-0   translate-middle badge rounded-pill bg-dark" style={{left:"90%", zIndex:'1'}}>
-              {sources}
-            </span>
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{description}</p>
 
@@ -32,7 +34,7 @@ export class Newscard extends Component {
             </a>
           </div>
         </div>
-      </div>
+        </div>
     );
   }
 }

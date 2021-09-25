@@ -20,6 +20,7 @@ export class NewsArea extends Component {
     document.title=`NewZapp-${this.capitalizeFirstletter(this.props.category)}`;
     }
     async updatednews(){
+        this.props.setProgress(10);
         let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=a07b6096c54c41fe897870ee1d69e63e&page=${this.state.page}&pagesize=${this.props.pagesize}`;
      //   let url =`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=3763c7b0d1eb4337af63b64c2782d64a`;
         this.setState({loading:true})
@@ -29,7 +30,7 @@ export class NewsArea extends Component {
         let parsedData=await data.json();
        console.log(parsedData);
         this.setState({articles: parsedData.articles,totalResults:parsedData.totalResults,loading:false})
-    
+       this.props.setProgress(100);
     }
    async componentDidMount()
     {
@@ -51,8 +52,6 @@ export class NewsArea extends Component {
    }
 
     fetchMoreData = async() => {
-    // a fake async api call like which sends
-    // 20 more records in 1.5 secs
     this.setState({page:this.state.page +1})
     let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=a07b6096c54c41fe897870ee1d69e63e&page=${this.state.page}&pagesize=${this.props.pagesize}`;
     //   let url =`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=3763c7b0d1eb4337af63b64c2782d64a`;
