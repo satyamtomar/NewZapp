@@ -24,7 +24,7 @@ const capitalizeFirstletter  =(string)=>{
     //     }
     // }
 
-    document.title=`NewZapp-${capitalizeFirstletter(props.category)}`;
+    
     
     const  updatednews = async () => {
         props.setProgress(10);
@@ -45,6 +45,7 @@ const capitalizeFirstletter  =(string)=>{
        props.setProgress(100);
     }
    useEffect(() => {
+    document.title=`NewZapp-${capitalizeFirstletter(props.category)}`;
        updatednews();
        // eslint-disable-next-line
    }, [])
@@ -85,7 +86,7 @@ const capitalizeFirstletter  =(string)=>{
 
            return (
             <>
-                <h1 className="text-center">NewZapp- Top  {capitalizeFirstletter(props.category)} Headlines</h1>
+                <h1 className="text-center" style={{ margin: '35px 0px', marginTop: '90px' }}>NewZapp- Top  {capitalizeFirstletter(props.category)} Headlines</h1>
                 {loading&&<Spin/>}
                 <InfiniteScroll
           dataLength={articles.length}
