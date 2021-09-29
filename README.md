@@ -4,8 +4,9 @@
  You can run this repository in your localhost for it to work.
 
 
-Links:https://youtu.be/7OqloTl5DUA
-NO LINKS OF SITE BECAUSE CORS ENABLED FOR LOCALHOST
+NO LINKS OF ACTUAL WORKING SITE IS AVAILABLE BECAUSE CORS ENABLED FOR LOCALHOST ONLY BY THE API SITE.
+LINK TO PREVIEW MY SITE ON YOUTUBE
+Link :https://youtu.be/7OqloTl5DUA
 
 Functionality:
 
