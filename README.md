@@ -4,7 +4,8 @@
  You can run this repository in your localhost for it to work.
 
 
-SORRY! NO LINKS AVAILABLE TO PREVIEW(CORS enabled for localhost)
+Links:https://youtu.be/7OqloTl5DUA
+NO LINKS OF SITE BECAUSE CORS ENABLED FOR LOCALHOST
 
 Functionality:
 
