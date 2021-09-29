@@ -7,6 +7,7 @@
 SORRY! NO LINKS AVAILABLE TO PREVIEW(CORS enabled for localhost)
 
 Functionality:
+
 *It shows daily news related to all topics
 
 *It has infinite scroll for loading all the articles from the api.
@@ -16,6 +17,7 @@ Functionality:
 *The articles sources are linked to you can read them from their sources too.Moreover the author and time of publish is also given.
 
 Preview:
+
 Home Page:
 
 ![image](https://user-images.githubusercontent.com/73239975/135234323-a85302e7-d999-4e8a-b851-3d273e7b46c9.png)
