@@ -6,7 +6,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 const NewsArea =(props)=> {
      const [articles,setArticles]=useState([]);
      const [loading,setLoading]=useState(true);
-     const [page,setPage]=useState(0);
+     const [page,setPage]=useState(1);
      const [totalResults,setTotalResults]=useState(0);
      
 
@@ -79,9 +79,7 @@ const capitalizeFirstletter  =(string)=>{
       //console.log(parsedData);
       setArticles(articles.concat(parsedData.articles));
       setTotalResults(parsedData.totalResults);
-      setLoading(false);
-       //setState({articles: articles.concat(parsedData.articles),totalResults:parsedData.totalResults,loading:false})
-   
+      
   };
 
            return (
@@ -91,7 +89,7 @@ const capitalizeFirstletter  =(string)=>{
                 <InfiniteScroll
           dataLength={articles.length}
           next={fetchMoreData}
-          hasMore={articles.length!==totalResults}
+          hasMore={articles.length !== totalResults}
           loader={<Spin/>}
         >
         <div className="container my-3">
