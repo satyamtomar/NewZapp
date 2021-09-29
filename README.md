@@ -5,3 +5,10 @@
 
 
 SORRY! NO LINKS AVAILABLE TO PREVIEW(CORS enabled for localhost)
+
+
+Preview:
+Home Page:
+
+![image](https://user-images.githubusercontent.com/73239975/135232318-4117b42b-e2b7-427a-85b2-8100a4892fc8.png)
+
