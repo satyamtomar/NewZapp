@@ -85,6 +85,7 @@ const capitalizeFirstletter  =(string)=>{
 
            return (
             <>
+            <div>
                 <h1 className="text-center text-5xl text-gray-500" style={{ margin: '35px 0px', marginTop: '90px' }}>  {capitalizeFirstletter(props.category)} News</h1>
                 {loading&&<Spin/>}
                 <InfiniteScroll
@@ -93,11 +94,11 @@ const capitalizeFirstletter  =(string)=>{
           hasMore={articles.length !== totalResults}
           loader={<Spin/>}
         >
-        <div className="container my-3">
-                <div className="row">
+        <div className=" my-3 px-4 ">
+                <div className=" grid md:grid-cols-4 sm:grid-col-2 grid-col-1 grid-flow-row space-x-2 lg:space-x-4">
                 {articles.map((ele)=>
                 {
-                   return <div className="col-md-4" key={ele.url}>
+                   return <div className="my-3" key={ele.url}>
                 <Newscard  title={ele.title} description={ele.description} sources={ele.source.name} imgurl={ele.urlToImage} newsurl={ele.url} author={ele.author} date={ele.publishedAt} />
                 </div>
               
@@ -109,6 +110,7 @@ const capitalizeFirstletter  =(string)=>{
                            <button  disabled={page <=1} type="button" className="btn btn-dark" onClick={handleprevclick}> Previous </button>
                            <button disabled={page+1>Math.ceil(totalResults/props.pagesize)} type="button" className="btn btn-dark" onClick={handlenextclick}> Next </button>
                            </div> */}
+                           </div>
             </>
         )
     }

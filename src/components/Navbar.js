@@ -12,8 +12,8 @@ const Navbar = () => {
   return (
     <>
     
-    <nav>
-    <div>
+    <nav className="">
+    <div className="sticky top-0">
 
     <div className=" bg-gray-300 items-center flex md:justify-between py-3 justify-center">
      <div className=" flex flex-col  items-center space-x-8 md:flex-row">
@@ -26,7 +26,7 @@ const Navbar = () => {
       <Link className="hover:no-underline hover:text-gray-100" to="/">general</Link><Link className="hover:no-underline hover:text-gray-100" to="business">business</Link><Link className="hover:no-underline hover:text-gray-100" to="entertainment">entertainment</Link><Link className="hover:no-underline hover:text-gray-100" to="health">health</Link><Link className="hover:no-underline hover:text-gray-100" to="science">science</Link><Link className="hover:no-underline hover:text-gray-100" to="sports">sports</Link><Link className="hover:no-underline hover:text-gray-100" to="technology">technology</Link>
     </div>
     </div>
-    e
+    
 
     </div>
     </div>

@@ -13,7 +13,7 @@ import LoadingBar from 'react-top-loading-bar'
 const App =()=> 
 {
   //apikey=process.env.REACT_APP_NEWS_API;
-const  apikey="a07b6096c54c41fe897870ee1d69e63e";
+const  apikey="3763c7b0d1eb4337af63b64c2782d64a";
   const [progress,setProgress]=useState(0)
   
   // const SetProgress=(progress)=>
