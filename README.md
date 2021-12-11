@@ -35,6 +35,7 @@ Sports page:
 Technology Page:
 
 ![image](https://user-images.githubusercontent.com/73239975/145685655-05f43327-1dd5-40db-aad3-2baea811ed6e.png)
+
 Entertainment Page:
 
 ![image](https://user-images.githubusercontent.com/73239975/145685666-10faf2d8-d602-4583-b160-1bd21cd09a8f.png)
