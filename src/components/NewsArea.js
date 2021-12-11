@@ -86,7 +86,7 @@ const capitalizeFirstletter  =(string)=>{
            return (
             <>
             <div>
-                <h1 className="text-center text-5xl text-gray-500" style={{ margin: '35px 0px', marginTop: '90px' }}>  {capitalizeFirstletter(props.category)} News</h1>
+                <h1 className="text-center text-5xl text-gray-500 mt-8 mb-4" >  {capitalizeFirstletter(props.category)} News</h1>
                 {loading&&<Spin/>}
                 <InfiniteScroll
           dataLength={articles.length}
@@ -94,11 +94,11 @@ const capitalizeFirstletter  =(string)=>{
           hasMore={articles.length !== totalResults}
           loader={<Spin/>}
         >
-        <div className=" my-3 px-4 ">
-                <div className=" grid md:grid-cols-4 sm:grid-col-2 grid-col-1 grid-flow-row space-x-2 lg:space-x-4">
+        <div className="  ">
+                <div className=" grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1  space-x-2 lg:space-x-4">
                 {articles.map((ele)=>
                 {
-                   return <div className="my-3" key={ele.url}>
+                   return <div className="py-2 px-2" key={ele.url}>
                 <Newscard  title={ele.title} description={ele.description} sources={ele.source.name} imgurl={ele.urlToImage} newsurl={ele.url} author={ele.author} date={ele.publishedAt} />
                 </div>
               
