@@ -1,47 +1,41 @@
-import React from 'react'
-import {Link} from "react-router-dom";
-const Navbar=(props)=> {
-        return (
-            <div>
-                <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-  <div className="container-fluid">
-    <Link className="navbar-brand" to="/">NewZapp</Link>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link active" to="/business">Business</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/entertainment">Entertainment</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/health">Health</Link>
-        </li>
-      
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/science">Science</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/sports">Sports</Link>
-        </li>
-        
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/technology">Technology</Link>
-        </li>
-      </ul>
-      
+import React from "react";
+import { Link } from "react-router-dom";
+
+import {GiNewspaper } from "react-icons/gi"
+// You have to add group-hover variant in tailwind config
+// to see what I've done in tailwind config go check my git code. 
+
+// You have to add _all_layouts.scss code to have some css styling..
+
+
+const Navbar = () => {
+  return (
+    <>
+    
+    <nav>
+    <div>
+
+    <div className=" bg-gray-300 items-center flex md:justify-between py-3 justify-center">
+     <div className=" flex flex-col  items-center space-x-8 md:flex-row">
+    <div className="flex flex-row items-center space-x-2 ">
+    <GiNewspaper className="h-8 w-8" />
+    <Link className="text-lg" to="/">NewZapp</Link>
+    
     </div>
-  </div>
-</nav>
-            </div>
-        )
-    }
+    <div className="flex items-center space-x-2 md:flex-row flex-col">
+      <Link className="hover:no-underline hover:text-gray-100" to="/">general</Link><Link className="hover:no-underline hover:text-gray-100" to="business">business</Link><Link className="hover:no-underline hover:text-gray-100" to="entertainment">entertainment</Link><Link className="hover:no-underline hover:text-gray-100" to="health">health</Link><Link className="hover:no-underline hover:text-gray-100" to="science">science</Link><Link className="hover:no-underline hover:text-gray-100" to="sports">sports</Link><Link className="hover:no-underline hover:text-gray-100" to="technology">technology</Link>
+    </div>
+    </div>
+    e
+
+    </div>
+    </div>
+
+    </nav>
 
 
-export default Navbar
+    </>
+  );
+};
+
+export default Navbar;

@@ -33,6 +33,7 @@ const capitalizeFirstletter  =(string)=>{
     //    setState({loading:true})
         // console.log(url)
         let data= await fetch(url);
+  
         props.setProgress(40);
         let parsedData=await data.json();
         props.setProgress(70);
@@ -84,7 +85,7 @@ const capitalizeFirstletter  =(string)=>{
 
            return (
             <>
-                <h1 className="text-center" style={{ margin: '35px 0px', marginTop: '90px' }}>NewZapp- Top  {capitalizeFirstletter(props.category)} Headlines</h1>
+                <h1 className="text-center text-5xl text-gray-500" style={{ margin: '35px 0px', marginTop: '90px' }}>  {capitalizeFirstletter(props.category)} News</h1>
                 {loading&&<Spin/>}
                 <InfiniteScroll
           dataLength={articles.length}
