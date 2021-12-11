@@ -11,7 +11,6 @@ const Newscard=(props)=> {
           <div className="  flex flex-col  py-2 px-2">
           <img
             src={!imgurl ? "imgg.jpg" : imgurl}
-            // className="card-img-top"
             className="object-cover h-64 w-full  "
             alt="..."
           />
