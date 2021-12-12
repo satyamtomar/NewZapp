@@ -95,7 +95,7 @@ const capitalizeFirstletter  =(string)=>{
           loader={<Spin/>}
         >
         <div className="  ">
-                <div className=" grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1  space-x-2 lg:space-x-4">
+                <div className=" grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1  ">
                 {articles.map((ele)=>
                 {
                    return <div className="py-2 px-2" key={ele.url}>

@@ -20,15 +20,15 @@ const Newscard=(props)=> {
             <p className=" truncate">{description}</p>
 
             <p className=" pt-2 flex flex-col space-y-1">
-              <small className="text-thin ">                
-                <strong>By:</strong> {author ? author : "unknown"}  
+              <small className="text-thin truncate">                
+                <strong>Author:</strong> {author ? author : "unknown"}  
                 </small>
-                <small>
-                <strong>At:</strong> {new Date(date).toGMTString()}  
+                <small className="text-thin truncate">
+                <strong>Published At:</strong> {new Date(date).toGMTString()}  
               </small>
             </p>
             <div className="flex flex-row justify-between items-center py-2">
-            <a rel="noreferrer" href={newsurl} className="btn btn-sm btn-dark ">
+            <a rel="noreferrer" href={newsurl} className="btn btn-sm btn-dark truncate">
               Read More
             </a>
             <span className="badge  bg-dark" >
