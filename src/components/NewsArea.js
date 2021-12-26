@@ -86,7 +86,7 @@ const capitalizeFirstletter  =(string)=>{
            return (
             <>
             <div>
-                <h1 className="text-center text-5xl text-gray-500 mt-8 mb-4" >  {capitalizeFirstletter(props.category)} News</h1>
+                <h1 className="text-center text-5xl text-gray-300 mt-8 mb-4" >  {capitalizeFirstletter(props.category)} News</h1>
                 {loading&&<Spin/>}
                 <InfiniteScroll
           dataLength={articles.length}
@@ -106,10 +106,7 @@ const capitalizeFirstletter  =(string)=>{
                  </div>
                  </div>
                  </InfiniteScroll>
-                           {/* <div className="container d-flex justify-content-between">
-                           <button  disabled={page <=1} type="button" className="btn btn-dark" onClick={handleprevclick}> Previous </button>
-                           <button disabled={page+1>Math.ceil(totalResults/props.pagesize)} type="button" className="btn btn-dark" onClick={handlenextclick}> Next </button>
-                           </div> */}
+                           
                            </div>
             </>
         )
