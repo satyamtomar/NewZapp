@@ -22,24 +22,21 @@ Preview:
 
 Home Page:
 
-![image](https://user-images.githubusercontent.com/73239975/145685629-b726a265-2b83-4c8f-b5d2-b673b185aa2d.png)
-
+![image](https://user-images.githubusercontent.com/73239975/147406907-a91fefdd-de58-49c2-8df1-2efdb0aeae94.png)
 Other Pages:
 
 Sports page:
 
 
-![image](https://user-images.githubusercontent.com/73239975/145685645-af4661a9-93c6-441f-826b-875c0d3f0957.png)
-
+![image](https://user-images.githubusercontent.com/73239975/147406913-ef7cf494-2e9b-471c-837a-25b6e7cf7dee.png)
 
 Technology Page:
 
-![image](https://user-images.githubusercontent.com/73239975/145685655-05f43327-1dd5-40db-aad3-2baea811ed6e.png)
-
+![image](https://user-images.githubusercontent.com/73239975/147406922-56e4370a-dc8d-4a74-ba8f-38e6aaa50113.png)
 Entertainment Page:
 
-![image](https://user-images.githubusercontent.com/73239975/145685666-10faf2d8-d602-4583-b160-1bd21cd09a8f.png)
+![image](https://user-images.githubusercontent.com/73239975/147406932-80e4d8f0-9057-45f5-813e-b85e49fa2a0b.png)
 
-![image](https://user-images.githubusercontent.com/73239975/145685682-931254a5-213d-4f0d-ac66-e47835290e33.png)
 
+![image](https://user-images.githubusercontent.com/73239975/147406947-033ea6dc-7e5c-48fc-978b-a403acf441a8.png)
 
