@@ -6,7 +6,7 @@ const Newscard=(props)=> {
 
     return (
       <>
-        <div  className="border-1 border-bg-gray-600">
+        <div  className="border-3 border-bg-gray-200 shadow-md shadow-cyan-500/100 rounded-lg">
         
           <div className="  flex flex-col  py-2 px-2">
           <img
