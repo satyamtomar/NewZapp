@@ -86,7 +86,7 @@ const capitalizeFirstletter  =(string)=>{
            return (
             <>
             <div>
-                <h1 className="text-center text-5xl text-gray-300 mt-8 mb-4" >  {capitalizeFirstletter(props.category)} News</h1>
+                <h1 className="text-center text-5xl text-gray-300 mt-8 mb-4 hover:text-gray-600" >  {capitalizeFirstletter(props.category)} News</h1>
                 {loading&&<Spin/>}
                 <InfiniteScroll
           dataLength={articles.length}
