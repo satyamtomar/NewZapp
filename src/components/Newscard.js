@@ -28,10 +28,10 @@ const Newscard=(props)=> {
               </small>
             </p>
             <div className="flex flex-row justify-between items-center py-2">
-            <a rel="noreferrer" href={newsurl} className="btn btn-sm btn-dark truncate">
+            <a rel="noreferrer" href={newsurl} className="btn btn-sm btn-dark truncate shadow-md shadow-cyan-500/100">
               Read More
             </a>
-            <span className="badge  bg-dark" >
+            <span className="badge  bg-dark shadow-md shadow-cyan-500/100" >
               {sources}
             </span>
             </div>
